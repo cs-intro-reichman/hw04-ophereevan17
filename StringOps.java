@@ -58,9 +58,9 @@ public class StringOps {
             ch = string.charAt(i);
             if(ch != 32) //runs for everything that isnt a space
             {
-                if((ch >= 65) && (ch <= 90)) //uppercase letter
+                if((ch >= 65) && (ch <= 90)) //if uppercase letter
                 {
-                    ch = (char)(ch + 32);
+                    ch = (char)(ch + 32); //change to lowercase
                 }
                 string2 = string2 + ch;
                 if((i + 1) < string.length())
@@ -75,7 +75,7 @@ public class StringOps {
            ch = string.charAt(i);
            if(ch != 32)
            {
-                if(string.charAt(i - 1) == 32) //First letter in new word.
+                if(string.charAt(i - 1) == 32) //i is letter place, check if there was a space before i (new word).
                 {
                     if((ch >= 97) && (ch <= 122))
                     {
@@ -103,14 +103,15 @@ public class StringOps {
         {
             if(string.charAt(i) == chr) count++; //number of places in new array
         }
-        int[] array = new int[count]; 
-        int p = 0;
+        int[] array = new int[count]; //builds array
+        int f = 0;
+
         for(int j = 0; j < string.length(); j++)
         {
-            if(string.charAt(j) == chr)
+            if(string.charAt(j) == chr) 
             {
-                array[p] = j;
-                p++;
+                array[f] = j; //plugs j (place of chr) into new array
+                f++;
             }
         }
         return array;
